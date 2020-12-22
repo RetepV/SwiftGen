@@ -1,0 +1,5 @@
+"unquoted key and translation" = "no quotes in this entry at all";
+"unquoted key and quoted translation" = "no quotes in this entry. \"Or are there...?\"";
+"quoted key and \"unquoted\" translation" = "no quotes in this entry at all";
+"quoted key and \"quoted\" translation" = "no quotes in this entry. \"Or are there...?\"";
+
