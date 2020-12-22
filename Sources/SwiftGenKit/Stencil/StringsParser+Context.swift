@@ -14,6 +14,13 @@ private extension String {
   }
 }
 
+private extension String {
+  var quoteEscaped: String {
+    self
+      .replacingOccurrences(of: "\"", with: "\\\"")
+  }
+}
+
 //
 // See the documentation file for a full description of this context's structure:
 // Documentation/SwiftGenKit Contexts/strings.md
@@ -24,8 +31,8 @@ extension Strings.Parser {
     let entryToStringMapper = { (entry: Strings.Entry, keyPath: [String]) -> [String: Any] in
       var result: [String: Any] = [
         "name": entry.keyStructure.last ?? "",
-        "key": entry.key.newlineEscaped,
-        "translation": entry.translation.newlineEscaped
+        "key": entry.key.newlineEscaped.quoteEscaped,
+        "translation": entry.translation.newlineEscaped.quoteEscaped
       ]
 
       if !entry.types.isEmpty {
